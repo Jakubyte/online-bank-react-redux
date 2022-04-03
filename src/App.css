@@ -1,0 +1,28 @@
+.header {
+  grid-area: header;
+  background-color: aqua;
+}
+
+.side {
+  grid-area: side;
+  background-color: brown;
+}
+
+.content {
+  grid-area: content;
+  background-color: hotpink;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: darkturquoise;
+}
+
+
+.App {
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  "side content content"
+  "footer footer footer";
+}
