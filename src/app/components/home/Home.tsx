@@ -2,8 +2,9 @@ import React from 'react';
 import { useAppSelector, useAppDispatch } from '../../hooks';
 import { login, logout } from '../../../features/loginManager/loginSlice';
 
-import { IItem, ItemProps } from '../nav/items.decl';
+
 import { Nav } from '../nav/Nav';
+import { Cards } from '../cards/Cards';
 
 
 export function Login() {
@@ -28,14 +29,21 @@ export function Home() {
         dispatch(logout());
     }
 
-    const nav: ItemProps = {
-        items: [{ name: "log out", onClick: () => { handleLogout() } }]
-    };
+    const nav = [
+        { name: "log out", onClick: () => { handleLogout() } },
+        { name: "hello world", onClick: () => { console.log("Clicked")}, onClickEvent: (e: any) => { console.log(e.target)} }
+    ]
+
+    const accounts = [
+        { name: "Test1", balance: 2000, account_number: "000-000-000" },
+        { name: "Test2", balance: 350, account_number: "000-000-001" },
+    ];
 
   return (
       <div>
           <p>Home page</p>
-          <Nav items={ nav.items }/>
+          <Nav items={nav} />
+          <Cards cards={accounts}/>
       </div>
   );
 }

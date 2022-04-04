@@ -7,7 +7,10 @@ export function Nav({ items }: ItemProps) {
       <div className="nav-bar">
           <ul>
               {
-                  items?.map((item: IItem) => <li key={item.name} onClick={() => {item.onClick()}}>{item.name}</li>)
+                  items?.map((item: IItem) => <li key={item.name} onClick={(e: any) => {
+                      if (item.onClick) { item.onClick() }
+                      if (item.onClickEvent) { item.onClickEvent(e) }
+                  }}>{item.name}</li>)
               }
           </ul>
       </div>

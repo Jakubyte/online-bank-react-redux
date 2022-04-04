@@ -1,8 +1,9 @@
 export type IItem = {
     name: string;
-    onClick: () => void;
+    onClick?: () => void;
+    onClickEvent?: (event: any) => void;
 };
 
 export interface ItemProps {
-    items: IItem[];
+    items: IItem[] | undefined;
 };
