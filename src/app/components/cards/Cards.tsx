@@ -8,7 +8,7 @@ export function Cards({ cards }: ICards) {
         <div>
             {
                 cards.map((card: CardProps) =>
-                (<React.Fragment key={card.account_number}>
+                (<React.Fragment key={card.name}>
                     <Card props={card} />
                 </React.Fragment>))
             }

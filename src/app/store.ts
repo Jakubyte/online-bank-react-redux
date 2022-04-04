@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import loginReducer from '../features/loginManager/loginSlice';
+import navReducer from '../features/navManager/navSlice';
 
 export const store = configureStore({
   reducer: {
-    loginManager: loginReducer
+    loginManager: loginReducer,
+    navManager: navReducer,
   },
 });
 

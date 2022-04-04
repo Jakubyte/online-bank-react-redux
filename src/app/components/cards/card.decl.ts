@@ -1,7 +1,12 @@
+export type Content = {
+    name: string;
+    content: any;
+}
+
 export type CardProps = {
     name: string;
-    balance: number;
-    account_number: string;
+    content: Content[]
+    footer: Content[]
 };
 
 export interface ICardProps {

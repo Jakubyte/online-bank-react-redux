@@ -1,0 +1,33 @@
+/*
+Light sea green: 20A39E
+English red: B23A48
+Lavendar web: E9E6FF
+*/
+
+
+.card {
+    margin: 0 25%;
+}
+
+.navbar {
+    background-color: #E9E6FF;
+}
+
+.navbar span {
+    border: solid #B23A48;
+    color: #000;
+    padding: 1em;
+    background-color: #E9E6FF;
+}
+
+.navbar span:hover {
+    background-color: #B23A48;
+    cursor: pointer;
+}
+
+.navbar span .selected {
+    border: solid #B23A48;
+    color: #FFF;
+    padding: 1em;
+    background-color: #B23A48;
+}

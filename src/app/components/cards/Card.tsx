@@ -1,13 +1,21 @@
 import React from 'react';
 
 import { ICardProps } from './card.decl';
-
+import './Card.css';
 export function Card({ props }: ICardProps) {
   return (
-    <div>
-        <span>{props.name}</span>
-        <p>{props.account_number}</p>
-        <p>{props.balance}</p>
+    <div className="card">
+      <span className="card-header">{props.name}</span>
+      <div className="card-content">
+        {
+          props.content.map((content) => <span key={content.name}>{content.content}</span>)
+        }
+      </div>
+      <div className="card-footer">
+        {
+          props.footer.map((content) => <span key={content.name}>{content.content}</span>)
+        }
+      </div>
     </div>
   );
 }

@@ -1,0 +1,43 @@
+.card {
+    background-color: #E9E6FF;
+    margin: 1em;
+    border-radius: 1em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    background-color: #20A39E;
+    text-align: left;
+    color: #FFF;
+    padding: 2%;
+    border-radius: 1em 1em 0 0;
+
+}
+
+.card-content {
+    margin: 2%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card-footer > span {
+    border-radius: 1em;
+
+    background-color: #B23A48;
+    color: #FFF;
+
+    padding: 2%;
+    margin: 0.5em;
+}

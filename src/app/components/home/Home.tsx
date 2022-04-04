@@ -3,9 +3,10 @@ import { useAppSelector, useAppDispatch } from '../../hooks';
 import { login, logout } from '../../../features/loginManager/loginSlice';
 
 
-import { Nav } from '../nav/Nav';
+
 import { Cards } from '../cards/Cards';
 
+import styles from './Home.module.css';
 
 export function Login() {
     const dispatch = useAppDispatch();
@@ -25,25 +26,34 @@ export function Login() {
 export function Home() {
     const dispatch = useAppDispatch();
 
-    const handleLogout = () => {
-        dispatch(logout());
-    }
-
-    const nav = [
-        { name: "log out", onClick: () => { handleLogout() } },
-        { name: "hello world", onClick: () => { console.log("Clicked")}, onClickEvent: (e: any) => { console.log(e.target)} }
-    ]
-
     const accounts = [
-        { name: "Test1", balance: 2000, account_number: "000-000-000" },
-        { name: "Test2", balance: 350, account_number: "000-000-001" },
+        {
+            name: "Test1",
+            content: [
+                { name: "Account number", content: "00-00-00" },
+                { name: "Balance", content: 2000 }
+            ],
+            footer: [
+                { name: "Transfer", content: "Transfer" },
+                { name: "Settings", content: "Settings"}
+            ]
+        },
+        {
+            name: "Test2",
+            content: [
+                { name: "Account number", content: "00-00-01" },
+                { name: "Balance", content: 350 }
+            ],
+            footer: [
+                { name: "Transfer", content: "Transfer" },
+                { name: "Settings", content: "Settings"}
+            ]
+        }
     ];
 
   return (
-      <div>
-          <p>Home page</p>
-          <Nav items={nav} />
-          <Cards cards={accounts}/>
+      <div className={styles.card}>
+          <Cards cards={accounts} />
       </div>
   );
 }
