@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import changerReducer from '../features/change/changerSlice';
+import loginReducer from '../features/loginManager/loginSlice';
 
 export const store = configureStore({
   reducer: {
-    changer: changerReducer
+    loginManager: loginReducer
   },
 });
 
